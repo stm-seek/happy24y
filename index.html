@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday My Luna Cat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="snap-container">
+        <!-- Section 1: Gift -->
+        <section class="snap-section" id="section1">
+            <div class="gift dukdik" id="gift">
+                <div class="gift-top" id="giftTop"></div>
+                <h1 class="gift-text" id="giftText" style="display: none;">สุขสันต์วันเกิด !!<br> ขอให้เป็นปีที่ดีนะ 💖
+                </h1>
+                <div class="gift-box" id="giftBox"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Gallery -->
+        <section class="gallery snap-section" id="gallery">
+            <h2>You & Me 💖🖼️</h2>
+            <ul>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample01.jpg" alt="sample01"></li>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample02.jpg" alt="sample02"></li>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample03.jpg" alt="sample03"></li>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample04.jpg" alt="sample04"></li>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample05.jpg" alt="sample05"></li>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample06.jpg" alt="sample06"></li>
+                <li><img src="https://yoruokamix.github.io/codepen-images/img/sample08.jpg" alt="sample08"></li>
+            </ul>
+            <span>I'm so happy to have u in my life!</span>
+            <span>♥️ ♥️ ♥️</span>
+        </section>
+
+        <!-- Section 3: Love Letter -->
+        <section class="envelope-section snap-section" id="section3">
+            <div class="card">
+                <div class="heart-container">
+                    <svg viewBox="0 0 100 100" width="100" height="100">
+                        <path class="heart"
+                            d="M50 88.9L16.7 55.6C7.2 46.1 7.2 30.9 16.7 21.4s24.7-9.5 34.2 0L50 20.5l-0.9 0.9c9.5-9.5 24.7-9.5 34.2 0s9.5 24.7 0 34.2L50 88.9z" />
+                        <path class="broken-heart"
+                            d="M50 88.9L16.7 55.6C7.2 46.1 7.2 30.9 16.7 21.4s24.7-9.5 34.2 0L50 20.5l-0.9 0.9c9.5-9.5 24.7-9.5 34.2 0s9.5 24.7 0 34.2L50 88.9z" />
+                        <circle class="sparkle" cx="25" cy="25" r="2" />
+                        <circle class="sparkle" cx="75" cy="25" r="2" />
+                        <circle class="sparkle" cx="50" cy="15" r="2" />
+                    </svg>
+                </div>
+
+                <div class="question active" id="q3">
+                    <h1 class="message">Will you be my Valentine? 💝</h1>
+                    <div class="btn-container">
+                        <button class="btn" onclick="nextQuestion(true, 3)">Come here!</button>
+                        <div class="no-btn-container">
+                            <button class="btn no" onclick="handleNo()" onmouseover="dodgeNo()">Nope</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question" id="final">
+                    <h1 class="message">You've made me the happiest person ever! ❤️</h1>
+                </div>
+                <div class="question" id="rejected">
+                    <h1 class="message">😢 But... but... please?</h1>
+                    <div class="btn-container">
+                        <button class="btn" onclick="resetQuestions()">Ok, let me try again</button>
+                    </div>
+                </div>
+                <div class="floating-hearts"></div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
