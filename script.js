@@ -44,7 +44,7 @@ images.forEach(img => observer.observe(img));
 
 
 let noButtonDodgeCount = 0;
-const maxDodges = 10;
+const maxDodges = 3;
 
 function nextQuestion(accepted, questionNumber) {
     if (accepted) {
@@ -59,7 +59,11 @@ function nextQuestion(accepted, questionNumber) {
 }
 
 function handleNo() {
-    if (noButtonDodgeCount >= maxDodges) {
+    if (noButtonDodgeCount < maxDodges) {
+        const btn = document.querySelector('.btn.no');
+        btn.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 100 - 50}px)`;
+        noButtonDodgeCount++;
+    } else if (noButtonDodgeCount >= maxDodges) {
         document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
         document.querySelector('#rejected').classList.add('active');
         document.querySelector('.heart').style.display = 'none';
@@ -67,17 +71,9 @@ function handleNo() {
     }
 }
 
-function dodgeNo() {
-    if (noButtonDodgeCount < maxDodges) {
-        const btn = document.querySelector('.btn.no');
-        btn.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 100 - 50}px)`;
-        noButtonDodgeCount++;
-    }
-}
-
 function resetQuestions() {
     document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
-    document.querySelector('#q1').classList.add('active');
+    document.querySelector('#q3').classList.add('active');
     document.querySelector('.heart').style.display = 'block';
     document.querySelector('.broken-heart').style.display = 'none';
     noButtonDodgeCount = 0;
